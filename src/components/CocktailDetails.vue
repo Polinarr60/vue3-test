@@ -61,24 +61,34 @@ const ingredients = computed(() => {
 })
 </script>
 
-<style module>
+<style module lang="scss">
+@import '../assets/global.scss';
+
 .root {
   width: 100%;
   padding: var(--padding);
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   gap: 32px;
+
+  @media (max-width: $mobile) {
+    gap: 24px;
+    padding: calc(var(--padding) / 2);
+  }
 }
 
 .header {
   display: flex;
   gap: var(--gap);
+
+  @media (max-width: $mobile) {
+    @include flex-column;
+    gap: calc(var(--gap) / 2);
+  }
 }
 
 .info {
   flex: 1;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   gap: var(--gap);
 }
 
@@ -87,6 +97,13 @@ const ingredients = computed(() => {
   width: 120px;
   height: 120px;
   border: 2px solid black;
+  overflow: hidden;
+  border-radius: 4px;
+
+  @media (max-width: $mobile) {
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .image {
@@ -96,15 +113,13 @@ const ingredients = computed(() => {
 }
 
 .details {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   gap: var(--gap);
 }
 
 .ingredientsList {
   list-style: none;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   gap: var(--gap);
 }
 

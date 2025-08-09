@@ -24,12 +24,13 @@ const emit = defineEmits<{
 }>()
 </script>
 
-<style module>
+<style module lang="scss">
+@import '../assets/global.scss';
+
 .root {
   flex: 0 0 33%;
   border-right: 3px solid black;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
 }
 
 .cocktail {

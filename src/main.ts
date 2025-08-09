@@ -1,12 +1,12 @@
-import './assets/global.css'
+import './assets/global.scss'
 
 import { createApp } from 'vue'
 import { VueQueryPlugin } from '@tanstack/vue-query'
 import { queryClient } from './lib/query-client'
 import router from './router'
-import MainPage from './pages/MainPage.vue'
+import App from './App.vue'
 
-const app = createApp(MainPage)
+const app = createApp(App)
 
 app.use(VueQueryPlugin, {
   queryClient,

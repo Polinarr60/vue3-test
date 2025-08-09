@@ -14,11 +14,11 @@ const props = withDefaults(defineProps<Props>(), {
 })
 </script>
 
-<style module>
+<style module lang="scss">
+@import '../assets/global.scss';
+
 .root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   gap: var(--gap);
 }
 </style>

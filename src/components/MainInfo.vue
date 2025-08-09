@@ -17,7 +17,9 @@ const props = defineProps<{
 }>()
 </script>
 
-<style module>
+<style module lang="scss">
+@import '../assets/global.scss';
+
 .root {
   flex: 1;
   overflow-y: auto;

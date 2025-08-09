@@ -38,11 +38,13 @@ const handleCocktailChange = (newCocktailCode: CocktailCode) => {
 }
 </script>
 
-<style module>
+<style module lang="scss">
+@import '../assets/global.scss';
+
 .root {
   display: flex;
-  width: 100%;
-  max-width: 1024px;
+  width: 80%;
+  max-width: $desktop;
   min-width: 360px;
   height: 80vh;
   min-height: 500px;
@@ -50,19 +52,22 @@ const handleCocktailChange = (newCocktailCode: CocktailCode) => {
   margin: 0 auto;
   background: white;
   box-sizing: border-box;
+
+  @media (max-width: $mobile) {
+    @include flex-column;
+    height: 100vh;
+    min-width: 320px;
+  }
 }
 
 .content {
   flex: 1;
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   overflow: hidden;
 }
 
 .loading {
   flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
 }
 </style>
