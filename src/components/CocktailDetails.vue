@@ -62,7 +62,7 @@ const ingredients = computed(() => {
 </script>
 
 <style module lang="scss">
-@import '../assets/global.scss';
+@use '../assets/index.scss' as *;
 
 .root {
   width: 100%;

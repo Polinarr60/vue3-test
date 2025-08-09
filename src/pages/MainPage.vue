@@ -35,7 +35,7 @@ const handleCocktailChange = (newCocktail: CocktailCode) => {
 </script>
 
 <style module lang="scss">
-@import '../assets/global.scss';
+@use '../assets/index.scss' as *;
 
 .root {
   display: flex;

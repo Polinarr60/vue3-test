@@ -18,7 +18,7 @@ const props = defineProps<{
 </script>
 
 <style module lang="scss">
-@import '../assets/global.scss';
+@use '../assets/index.scss' as *;
 
 .root {
   flex: 1;

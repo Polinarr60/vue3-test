@@ -25,7 +25,7 @@ const emit = defineEmits<{
 </script>
 
 <style module lang="scss">
-@import '../assets/global.scss';
+@use '../assets/index.scss' as *;
 
 .root {
   flex: 0 0 33%;
