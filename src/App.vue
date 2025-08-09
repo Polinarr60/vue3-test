@@ -1,12 +1,8 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <router-view />
 </template>
 
-<script setup lang="ts">
-// Main app wrapper with router
-</script>
+<script setup lang="ts"></script>
 
 <style>
 #app {

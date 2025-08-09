@@ -1,9 +1,6 @@
 <template>
   <div :class="$style.root">
-    <SideBar
-      :currentCocktail="currentCocktailFromRoute"
-      @update:currentCocktail="handleCocktailChange"
-    />
+    <SideBar :currentCocktail="currentCocktail" @update:currentCocktail="handleCocktailChange" />
 
     <div :class="$style.content">
       <ErrorMesage v-if="error" :message="error.message" :class="$style.error" />
@@ -26,15 +23,14 @@ import ErrorMesage from '@/components/ErrorMesage.vue'
 const route = useRoute()
 const router = useRouter()
 
-const currentCocktailFromRoute = computed(() => {
+const currentCocktail = computed(() => {
   return (route.params.cocktail as CocktailCode) || COCKTAIL_CODES[0]
 })
 
-const { cocktails, loading, currentCocktail, error } = useCocktails()
+const { cocktails, loading, error } = useCocktails(currentCocktail)
 
-const handleCocktailChange = (newCocktailCode: CocktailCode) => {
-  currentCocktail.value = newCocktailCode
-  router.push(`/${newCocktailCode}`)
+const handleCocktailChange = (newCocktail: CocktailCode) => {
+  router.push(`/${newCocktail}`)
 }
 </script>
 

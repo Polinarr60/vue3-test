@@ -18,6 +18,8 @@ const props = withDefaults(defineProps<Props>(), {
 @import '../assets/global.scss';
 
 .root {
+  width: 100%;
+  height: 100%;
   @include flex-center;
   gap: var(--gap);
 }
