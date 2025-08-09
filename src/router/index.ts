@@ -1,8 +1,9 @@
 import { createRouter } from 'vue-router'
 import { COCKTAIL_CODES } from '../constants/cocktails'
-import MainPage from '../MainPage.vue'
 import { createWebHistory } from 'vue-router'
 import type { CocktailCode } from '@/types/cocktail'
+import NotFound from '@/pages/NotFound.vue'
+import MainPage from '@/pages/MainPage.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -17,11 +18,19 @@ const router = createRouter({
       beforeEnter: (to) => {
         const cocktail = to.params.cocktail as string
         if (!COCKTAIL_CODES.includes(cocktail as CocktailCode)) {
-          return `/${COCKTAIL_CODES[0]}`
+          return '/404'
         }
       },
     },
-    { path: '/:pathMatch(.*)*', name: 'NotFound', redirect: `/${COCKTAIL_CODES[0]}` },
+    {
+      path: '/404',
+      name: 'notfound',
+      component: NotFound,
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      redirect: '/404',
+    },
   ],
 })
 

@@ -6,13 +6,27 @@ import type { CocktailCode } from '@/types/cocktail'
 export function useCocktails() {
   const currentCocktail = ref<CocktailCode>(COCKTAIL_CODES[0])
 
-  const { data: cocktails, isLoading: loading } = useQuery({
+  const {
+    data: cocktails,
+    isLoading: loading,
+    error,
+  } = useQuery({
     queryKey: ['cocktail', currentCocktail],
     queryFn: async () => {
       const response = await fetch(
         `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${currentCocktail.value}`,
       )
+
+      if (!response.ok) {
+        throw new Error(`Failed to get cocktails`)
+      }
+
       const data = await response.json()
+
+      if (!data.drinks) {
+        throw new Error(`No cocktails found`)
+      }
+
       return data.drinks
     },
     enabled: computed(() => !!currentCocktail.value),
@@ -21,6 +35,7 @@ export function useCocktails() {
   return {
     cocktails,
     loading,
+    error,
     currentCocktail,
   }
 }

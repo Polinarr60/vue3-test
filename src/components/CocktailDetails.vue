@@ -87,7 +87,6 @@ const ingredients = computed(() => {
   width: 120px;
   height: 120px;
   border: 2px solid black;
-  overflow: hidden;
 }
 
 .image {
@@ -104,8 +103,6 @@ const ingredients = computed(() => {
 
 .ingredientsList {
   list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: column;
   gap: var(--gap);
@@ -123,16 +120,5 @@ const ingredients = computed(() => {
 
 .name {
   flex: 1;
-}
-
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-  }
-
-  .imageContainer {
-    width: 100px;
-    height: 100px;
-  }
 }
 </style>

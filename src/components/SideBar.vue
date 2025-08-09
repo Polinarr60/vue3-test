@@ -12,8 +12,8 @@
 </template>
 
 <script setup lang="ts">
-import type { CocktailCode } from '@/types/cocktail'
 import { COCKTAIL_CODES } from '../constants/cocktails'
+import type { CocktailCode } from '../types/cocktail'
 
 const props = defineProps<{
   currentCocktail: CocktailCode
@@ -28,22 +28,20 @@ const emit = defineEmits<{
 .root {
   flex: 0 0 33%;
   border-right: 3px solid black;
-  padding-block: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
 }
 
 .cocktail {
   width: 100%;
-  padding: 8px 16px;
+  padding: 12px 16px;
   cursor: pointer;
   text-transform: capitalize;
-}
 
-.cocktail.active {
-  background-color: gray;
-  color: white;
+  &.active {
+    background-color: gray;
+    color: white;
+    border-color: black;
+  }
 }
 </style>

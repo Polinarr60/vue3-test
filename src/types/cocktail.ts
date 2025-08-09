@@ -1,15 +1,27 @@
 import type { COCKTAIL_CODES } from '@/constants/cocktails'
 
+type Category = 'Cocktail' | 'Ordinary Drink' | 'Other / Unknown'
+
+type Glass =
+  | 'Old-fashioned glass'
+  | 'Champagne Flute'
+  | 'Wine Glass'
+  | 'Cocktail glass'
+  | 'Highball glass'
+  | 'Collins glass'
+  | 'Jar'
+  | 'Margarita/Coupette glass'
+
 export interface Cocktail {
   idDrink: string
   strDrink: string
   strDrinkAlternate?: string
   strTags?: string
   strVideo?: string
-  strCategory: string
+  strCategory: Category
   strIBA?: string
   strAlcoholic: string
-  strGlass: string
+  strGlass: Glass
   strInstructions: string
   strInstructionsES?: string
   strInstructionsDE?: string

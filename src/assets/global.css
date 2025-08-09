@@ -21,17 +21,12 @@ li {
 }
 
 :root {
-  color: black;
-  background-color: white;
-
-  --transition-duration: 0.3s;
-  --gap: 16px;
   --padding: 16px;
+  --gap: 16px;
 }
 
 #app {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
