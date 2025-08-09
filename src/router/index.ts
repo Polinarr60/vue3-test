@@ -16,8 +16,8 @@ const router = createRouter({
       path: '/:cocktail',
       component: MainPage,
       beforeEnter: (to) => {
-        const cocktail = to.params.cocktail as string
-        if (!COCKTAIL_CODES.includes(cocktail as CocktailCode)) {
+        const cocktail = to.params.cocktail as CocktailCode
+        if (!COCKTAIL_CODES.includes(cocktail)) {
           return '/404'
         }
       },

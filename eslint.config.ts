@@ -20,14 +20,10 @@ export default defineConfigWithVueTs(
     rules: {
       '@typescript-eslint/no-unused-vars': 'error',
       '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/prefer-const': 'error',
-      '@typescript-eslint/no-inferrable-types': 'warn',
-
       'vue/require-default-prop': 'error',
       'vue/require-prop-types': 'error',
       'vue/no-unused-components': 'warn',
       'vue/component-name-in-template-casing': ['error', 'PascalCase'],
-
       'no-console': 'warn',
       'no-debugger': 'error',
       'prefer-const': 'error',
